@@ -28,8 +28,23 @@ namespace twozerofoureight
         public void Notify(Model m)
         {
             UpdateBoard(((TwoZeroFourEightModel) m).GetBoard());
+            TotalScore(((TwoZeroFourEightModel)m).GetBoard());
         }
+        private void TotalScore(int [,] board)
+        {
+            int sum = 0;
+            for(int i = 0;i < 4; i++)
+            {
+                for(int j = 0; j < 4; j++)
+                {
+                    label2.Text = Convert.ToString(sum += board[i, j]);
+                }
 
+
+            }
+           
+
+        }
         private void UpdateTile(Label l, int i)
         {
             if (i != 0)
@@ -97,5 +112,14 @@ namespace twozerofoureight
             controller.ActionPerformed(TwoZeroFourEightController.DOWN);
         }
 
+        private void TwoZeroFourEightView_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
